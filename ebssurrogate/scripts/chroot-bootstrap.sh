@@ -88,7 +88,8 @@ function disable_ufw_ipv6 {
 }
 
 function install_packages_for_build {
-	apt-get install -y --no-install-recommends linux-libc-dev \
+	apt-get update --fix-missing
+	apt-get install -y --no-install-recommends --no-cache linux-libc-dev \
 	 acl \
 	 magic-wormhole sysstat \
 	 build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libsystemd-dev libpq-dev libxml2-utils uuid-dev xsltproc ssl-cert \
